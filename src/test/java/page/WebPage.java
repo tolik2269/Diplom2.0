@@ -8,6 +8,9 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class WebPage {
+
+    public static final String SUT_URL = "sut.url";
+
     private SelenideElement buyButton = $$(".button__text").find(exactText("Купить"));
     private SelenideElement buyCreditButton = $$(".button__text").find(exactText("Купить в кредит"));
     private SelenideElement cardNumberField = $$(".input__inner").findBy(text("Номер карты"))
@@ -38,14 +41,14 @@ public class WebPage {
 
 
     public void buyWithCash() {
-        open("http://localhost:8080/");
+        open(System.getenv(SUT_URL));
         buyButton.click();
         payCard.shouldBe(visible);
 
     }
 
     public void buyInCredit() {
-        open("http://localhost:8080/");
+        open(System.getenv(SUT_URL));
         buyCreditButton.click();
         payCreditByCard.shouldBe(visible);
     }

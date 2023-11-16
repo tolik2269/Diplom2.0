@@ -24,17 +24,12 @@ public class DataHelper {
         return generateRandomDigits(16);
     }
 
-    public static String getRandomCardNumberWithLength() {
+    public static String getRandomCardNumberLess() {
         int randomNumberLength = random.nextInt(16);
         return generateRandomDigits(randomNumberLength);
     }
 
 
-    public static String getOneMonthAgoMonth() {
-        LocalDate currentDate = LocalDate.now();
-        LocalDate oneMonthAgo = currentDate.minusMonths(1);
-        return oneMonthAgo.format(DateTimeFormatter.ofPattern("MM"));
-    }
 
     public static String getYearWithOneValue() {
         return generateRandomDigits(1);
@@ -52,7 +47,7 @@ public class DataHelper {
 
     public static String getCurrentYearPlus5() {
         int currentYear = Integer.parseInt(getCurrentYear());
-        int yearPlus6 = currentYear + 6;
+        int yearPlus6 = currentYear + 5;
         return String.format("%02d", yearPlus6 % 100);
     }
 
@@ -71,7 +66,7 @@ public class DataHelper {
         return "00";
     }
 
-    public static String getEmptyMonth() {
+    public static String getEmptyLine() {
         return "";
     }
 
@@ -79,13 +74,6 @@ public class DataHelper {
         return "00";
     }
 
-    public static String getEmptyYear() {
-        return "";
-    }
-
-    public static String getEmptyNumberCard() {
-        return "";
-    }
 
 
     public static String getNextMonth() {
@@ -119,9 +107,6 @@ public class DataHelper {
         return "!@#$%^&*()_+-";
     }
 
-    public static String getEmptyOwner() {
-        return "";
-    }
 
     public static String getRandomCvc() {
         return generateRandomDigits(3);
@@ -135,10 +120,6 @@ public class DataHelper {
         return generateRandomDigits(2);
     }
 
-    public static String getEmptyCvc() {
-        return "";
-    }
-
     private static String generateRandomDigits(int length) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < length; i++) {
@@ -146,10 +127,6 @@ public class DataHelper {
         }
         return sb.toString();
     }
-    public static String getCardNumberNothing() {
-        return faker.number().digits(16);
 
-
-    }
 }
 
