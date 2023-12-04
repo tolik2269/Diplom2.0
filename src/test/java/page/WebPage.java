@@ -9,7 +9,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class WebPage {
 
-    public static final String SUT_URL = "sut.url";
+    //public static final String SUT_URL = "sut.url";
+    public static final String SUT_URL = System.getProperty("sut.url");
 
     private SelenideElement buyButton = $$(".button__text").find(exactText("Купить"));
     private SelenideElement buyCreditButton = $$(".button__text").find(exactText("Купить в кредит"));

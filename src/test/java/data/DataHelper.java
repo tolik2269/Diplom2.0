@@ -47,8 +47,8 @@ public class DataHelper {
 
     public static String getCurrentYearPlus5() {
         int currentYear = Integer.parseInt(getCurrentYear());
-        int yearPlus6 = currentYear + 5;
-        return String.format("%02d", yearPlus6 % 100);
+        int yearPlus5 = currentYear + 5;
+        return String.format("%02d", yearPlus5 % 100);
     }
 
     public static String getPreviousYear() {

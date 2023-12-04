@@ -43,7 +43,7 @@ public class DataHelperDB {
     }
 
     @SneakyThrows
-    private static String getData(String query) throws SQLException {
+    private static String getData(String query) {
         QueryRunner runner = new QueryRunner();
         String data = "";
         Connection conn = DriverManager.getConnection(url, user, password);
